@@ -4,3 +4,8 @@ input[type="submit"]{
 input[type="submit"]:active{
   transform: translateY(3px);
 }
+input[type="submit"]:disabled{
+  background-color: rgb(121, 121, 121);
+  color: #FFF;
+  cursor: not-allowed;
+}

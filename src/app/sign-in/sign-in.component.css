@@ -4,3 +4,17 @@ input[type="submit"]{
 input[type="submit"]:active{
   transform: translateY(3px);
 }
+input[type="submit"]:disabled{
+  background-color: rgb(180, 180, 180);
+  color: white;
+  cursor: not-allowed;
+}
+/* p.error
+{
+  display: none;
+}
+input.ng-touched.ng-invalid > p.error {
+  display: block;
+  color: rgb(255, 94, 94);
+  transition: 1s ease-in-out;
+} */
