@@ -1,16 +1,43 @@
-<div class="absolute top-0 w-4/12 rounded-br-full h-32 bg-teal-300">
-</div>
+<div class="absolute top-0 w-4/12 rounded-br-full h-32 bg-indigo-600"></div>
 <div class="mx-auto text-center mt-32">
-  <div class="text-3xl mb-4">Sign in</div>
-  <form [formGroup]="signIn" (ngSubmit)="onSubmit()" >
-    <div class="flex sm:flex-row flex-col justify-center ">
-      <input formControlName="email" class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-black sm:mx-3 my-2 px-2 py-2 rounded" placeholder="example@gmail.com" type="text">
-      
-      <input formControlName="pwd" class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-black sm:mx-3 my-2 px-2 py-2 rounded" placeholder="Password" type="password">
+  <div class="text-3xl text-indigo-900 mb-4">Sign in</div>
+  <form [formGroup]="signIn" (ngSubmit)="onSubmit()">
+    <div class="flex sm:flex-row flex-col justify-center">
+      <input
+        formControlName="email"
+        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-indigo-900 sm:mx-3 my-2 px-2 py-2 rounded"
+        placeholder="example@gmail.com"
+        type="text"
+      />
+
+      <input
+        formControlName="pwd"
+        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-indigo-900 sm:mx-3 my-2 px-2 py-2 rounded"
+        placeholder="Password"
+        type="password"
+      />
     </div>
-    <p class="error font-light text-sm text-red-500" *ngIf="signIn.get('email').errors?.pattern">Should be valid email</p>
-    <input [disabled]="!signIn.valid" class="px-4 py-2 rounded mt-4 cursor-pointer bg-teal-200 hover:bg-teal-300 outline-none" type="submit" value="Sign in">
+    <p
+      class="error font-light text-sm text-red-500"
+      *ngIf="signIn.get('email').errors?.pattern"
+    >
+      Should be valid email
+    </p>
+    <input
+      class="px-4 py-2 rounded mt-4 shadow-lg cursor-pointer bg-indigo-600 text-white hover:bg-indigo-800 outline-none"
+      type="submit"
+      value="Sign in"
+      [disabled]="!signIn.valid"
+    />
   </form>
-  <p class="mt-2 text-gray-600 hover:text-gray-800 text-sm cursor-pointer" (click)="navigateToSignUP()">Create an account</p>
-  <p class="mt-8 text-gray-700 hover:text-gray-800 cursor-pointer">Sign in with <span><i class="fa fa-google px-1" aria-hidden="true"></i></span> </p>
+  <p
+    class="mt-2 text-indigo-900 hover:text-indigo-800 text-sm cursor-pointer"
+    (click)="navigateToSignUP()"
+  >
+    Create an account
+  </p>
+  <p class="mt-8 text-gray-700 hover:text-gray-800 cursor-pointer">
+    Sign in with
+    <span><i class="fa fa-google px-1" aria-hidden="true"></i></span>
+  </p>
 </div>

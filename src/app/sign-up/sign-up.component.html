@@ -1,33 +1,33 @@
-<div class="absolute top-0 w-4/12 rounded-br-full z-0 h-32 bg-teal-300">
+<div class="absolute top-0 w-4/12 rounded-br-full z-0 h-32 bg-indigo-600">
   <i
     class="fas fa-arrow-left ml-4 mt-4 text-2xl cursor-pointer hover:text-gray-800"
     (click)="navigateToSignIn()"
   ></i>
 </div>
 <div class="mx-auto text-center sm:mt-24 mt-32 z-10">
-  <div class="text-3xl mb-4">Create an account</div>
+  <div class="text-3xl mb-4 text-indigo-900">Create an account</div>
   <form [formGroup]="signUp" (ngSubmit)="onSubmit()">
     <div class="flex flex-col">
       <input
-        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-black my-2 px-2 py-2 rounded"
+        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-indigo-900 my-2 px-2 py-2 rounded"
         placeholder="ex: John Doe"
         type="text"
         formControlName = "name"
       />
       <input
-        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-black my-2 px-2 py-2 rounded"
+        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-indigo-900 my-2 px-2 py-2 rounded"
         placeholder="example@gmail.com"
         type="text"
         formControlName = "email"
       />
       <input
-        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-black my-2 px-2 py-2 rounded"
+        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-indigo-900 my-2 px-2 py-2 rounded"
         placeholder="Password"
         type="password"
         formControlName = "pwd"
       />
       <input
-        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-black my-2 px-2 py-2 rounded"
+        class="bg-gray-100 sm:w-64 inline-block mx-auto outline-none border-2 hover:border-indigo-900 my-2 px-2 py-2 rounded"
         placeholder="Confirm Password"
         type="password"
         formControlName = "confirmPwd"
@@ -35,7 +35,7 @@
     </div>
     <p *ngIf="signUp.valid == false" class="text-red-400 text-xs">Each field should be valid</p>
     <input
-      class="px-4 py-2 rounded mt-4 cursor-pointer bg-teal-300 hover:bg-teal-200 outline-none"
+      class="px-4 py-2 rounded mt-4 text-white shadow-lg cursor-pointer bg-indigo-600 hover:bg-indigo-800 outline-none"
       type="submit"
       value="Sign up"
       [disabled]="!signUp.valid"
