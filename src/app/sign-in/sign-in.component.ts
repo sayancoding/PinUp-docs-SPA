@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,9 +9,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
-  constructor(private _router: Router) {}
+  constructor(private _router: Router,private _auth:AuthService) {}
 
   ngOnInit(): void {}
+  
+  isAuthSuccess:boolean = false
 
   navigateToSignUP() {
     this._router.navigateByUrl('/sign-up');
@@ -25,7 +28,15 @@ export class SignInComponent implements OnInit {
     pwd: new FormControl('', [Validators.required]),
   });
   onSubmit() {
-    console.log(this.signIn.value);
-    this.signIn.reset()
+    // console.log(this.signIn.value);
+    this._auth.signInUser(this.signIn.value)
+    .subscribe(
+      res => {
+        this.isAuthSuccess = true
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    // this.signIn.reset()
   }
 }
