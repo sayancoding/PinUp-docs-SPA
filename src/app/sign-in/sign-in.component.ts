@@ -34,9 +34,15 @@ export class SignInComponent implements OnInit {
       res => {
         this.isAuthSuccess = true
         console.log(res);
+        setTimeout(() => {
+          this._router.navigateByUrl('/home');
+        }, 400);
       },
-      err => console.log(err)
+      err => {
+        console.log(err);
+        alert(err.error.error)
+      }
     )
-    // this.signIn.reset()
+    this.signIn.reset()
   }
 }

@@ -1,0 +1,85 @@
+<nav class="flex text-indigo-900 justify-between sm:px-10 px-4 h-16">
+  <div class="my-auto flex sm:w-2/12 w-full">
+    <img
+      src="../../assets/logo.png"
+      width="60px"
+      class="sm:w-60px w-12"
+      alt=""
+    />
+    <p class="my-auto pl-4 text-xl">Pin Up</p>
+  </div>
+  <div class="my-auto sm:flex hidden w-4/12">
+    <input
+      type="text"
+      class="bg-gray-100 py-2 px-3 w-full rounded"
+      placeholder="search here.."
+      name=""
+      id=""
+    />
+  </div>
+  <div class="my-auto sm:flex justify-end sm:w-4/12 w-1/12">
+    <i class="material-icons px-1 sm:block hidden">face</i>
+    <p class="cursor-pointer hover:text-gray-600 sm:block hidden text-gray-700">
+      Hey , Sayan Maity
+    </p>
+    <p
+      id="toggle-btn"
+      class="cursor-pointer hover:text-gray-600 sm:hidden block text-gray-700"
+    >
+      <i class="material-icons">drag_indicator</i>
+    </p>
+  </div>
+</nav>
+<div class="flex">
+  <div
+    class="sidebar text-white rounded-r-lg w-2/12 py-8 sm:block hidden px-2 bg-indigo-800 min-h-screen"
+  >
+    <div class="flex hover:bg-gray-900 my-4 py-2 sm:justify-start justify-center sm:px-4 cursor-pointer rounded-full">
+      <i class="material-icons">spa</i>
+      <p class="my-auto ml-2 sm:block hidden">Overview</p>
+    </div>
+    <div class="flex hover:bg-gray-900 my-4 py-2 sm:justify-start justify-center sm:px-4 cursor-pointer rounded-full">
+      <i class="material-icons">description</i>
+      <p class="my-auto ml-2 sm:block hidden">Documents</p>
+    </div>
+    <div class="flex hover:bg-gray-900 my-4 py-2 sm:justify-start justify-center sm:px-4 cursor-pointer rounded-full">
+      <i class="material-icons">event</i>
+      <p class="my-auto ml-2 sm:block hidden">Tasks</p>
+    </div>
+  </div>
+  <div class="sm:w-10/12 w-full p-4">
+  <app-docs (click)="detailView()" ></app-docs>
+  </div>
+</div>
+
+<ng-container *ngIf="isModalOn">
+  <div class="modal shadow-lg fixed w-screen h-full top-0 left-0">
+    <div class="modal-container sm:w-5/12 w-11/12 px-4 py-2 rounded-lg ">
+      <div class="flex justify-between pt-2 ">
+        <p class="text-xs">Created on: 12th may , 2020</p>
+        <i class="material-icons cursor-pointer" (click)="toggleModal()">remove</i>
+      </div>
+      <div class="text-lg font-semibold py-1">Time to code</div>
+      <div class="description">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem corporis, est iusto saepe
+         enim eaque odit suscipit dolorum molestias obcaecati. Perspiciatis quaerat ipsam, 
+         necessitatibus magni facere non officiis ducimus minus!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem corporis, est iusto saepe
+         enim eaque odit suscipit dolorum molestias obcaecati. Perspiciatis quaerat ipsam, 
+         necessitatibus magni facere non officiis ducimus minus!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem corporis, est iusto saepe
+         enim eaque odit suscipit dolorum molestias obcaecati. Perspiciatis quaerat ipsam, 
+         necessitatibus magni facere non officiis ducimus minus!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem corporis, est iusto saepe
+         enim eaque odit suscipit dolorum molestias obcaecati. Perspiciatis quaerat ipsam, 
+         necessitatibus magni facere non officiis ducimus minus!
+         <p class="text-xs mt-8 text-gray-600">last edited : 12th may ,2020</p>
+      </div>
+      <div class="flex py-2">
+        <i class="material-icons bg-indigo-100 p-2 rounded-full hover:bg-indigo-200 cursor-pointer mr-2">create</i>
+        <i class="material-icons bg-indigo-100 p-2 rounded-full hover:bg-indigo-200 cursor-pointer mr-2">delete_sweep</i>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

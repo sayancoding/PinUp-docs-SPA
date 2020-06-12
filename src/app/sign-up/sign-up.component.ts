@@ -45,5 +45,6 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     console.log(this.signUp.value);
     this.signUp.reset();
+    
   }
 }
