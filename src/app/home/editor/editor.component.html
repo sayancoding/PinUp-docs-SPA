@@ -1,0 +1,26 @@
+<div class="my-8 mx-4 text-indigo-900">
+  <div class="flex">
+    <i class="material-icons text-3xl">attach_file</i>
+    <p class="sm:text-3xl text-2xl">Write on your wall</p>
+  </div>
+  <div class="mt-4 ml-2">
+    <form [formGroup]="createDoc" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        formControlName="title"
+        placeholder="Title"
+        class="bg-indigo-100 px-4 py-2 sm:w-5/12 w-full outline-none rounded border-1 hover:border-gray-700"
+      />
+      <br>
+      <div class="my-4">
+        <quill-editor [style]="editorStyle" [modules]="config" formControlName="desc"></quill-editor>
+      </div>
+      <button type="submit" class="bg-indigo-800 text-white px-2 py-2 rounded-full" [disabled]="!createDoc.valid">
+        <div class="flex ">
+          <i class="material-icons">push_pin</i> <p class="pr-2">Pin Up</p>
+        </div>
+      </button>
+    </form>
+
+  </div> 
+</div>

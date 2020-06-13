@@ -1,0 +1,35 @@
+<div class="sm:w-10/12 w-full p-4">
+    <div class="tag flex flex-no-wrap flex-row px-2 mt-2 mb-4">
+    <p class="text-indigo-800 px-4 py-1 mx-2 bg-gray-100 rounded-full">Regular</p>
+    <p class="text-indigo-800 px-4 py-1 mx-2 bg-gray-100 rounded-full">Business</p>
+  </div>
+<app-docs (modalToggle)="detailView($event)" ></app-docs>
+
+<ng-container *ngIf="isModalOn">
+  <div class="modal shadow-lg fixed w-screen h-full top-0 left-0">
+    <div class="modal-container sm:w-5/12 w-11/12 px-4 py-2 rounded-lg ">
+      <div class="flex justify-between pt-2 ">
+        <p class="text-xs">Created on: {{showItems.created_on | date:'shortDate'}}</p>
+        <i class="material-icons cursor-pointer" (click)="toggleModal()">remove</i>
+      </div>
+      <div class="text-lg font-semibold py-1">{{showItems.doc_title}}</div>
+      <div class="description">
+        {{showItems.doc_desc}}
+         <p class="text-xs mt-8 text-gray-600">last edited : {{showItems.edited_on | date:'shortDate'}}</p>
+      </div>
+      <div class="flex py-2">
+        <i class="material-icons bg-indigo-100 p-2 rounded-full hover:bg-indigo-200 cursor-pointer mr-2">create</i>
+        <i class="material-icons bg-indigo-100 p-2 rounded-full hover:bg-indigo-200 cursor-pointer mr-2">delete_sweep</i>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div class="float-btn bg-indigo-800 px-4 cursor-pointer py-2 rounded-full text-white shadow-lg">
+  <a [routerLink]="[ '/','home','editor']">
+    <div class="flex">
+      <i class="material-icons pr-1">add_circle</i>
+      <p>Create</p>
+    </div>
+  </a>
+</div>
