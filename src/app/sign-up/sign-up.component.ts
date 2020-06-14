@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  constructor(private _router: Router) {}
+  constructor(private _router: Router,private _authService : AuthService) {}
 
   ngOnInit(): void {}
   navigateToSignIn() {
@@ -44,7 +45,14 @@ export class SignUpComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.signUp.value);
+    this._authService.signUp(this.signUp.value).subscribe(result=>{
+      alert('You\'ve successfully created ')
+      this._router.navigateByUrl('/sign-in');
+      console.log(result)
+    },err=>{
+      alert('Something happen wrong..')
+      console.log(err)
+    })
     this.signUp.reset();
-    
   }
 }
