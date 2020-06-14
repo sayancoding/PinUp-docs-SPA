@@ -34,6 +34,7 @@ export class SignInComponent implements OnInit {
       res => {
         this.isAuthSuccess = true
         console.log(res);
+        localStorage.setItem('token',res.token);
         setTimeout(() => {
           this._router.navigateByUrl('/home');
         }, 400);

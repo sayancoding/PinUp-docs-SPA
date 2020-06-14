@@ -12,4 +12,10 @@ export class AuthService {
   signInUser(user){
     return this._http.post<any>(this._signInUrl,user)
   }
+  loggedIn(){
+    return !!localStorage.getItem('token')
+  }
+  getToken(){
+    return localStorage.getItem('token')
+  }
 }
