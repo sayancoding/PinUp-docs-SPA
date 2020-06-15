@@ -1,0 +1,14 @@
+<div class="mx-auto text-center">
+  <div class="mt-20 sm:px-32 rounded-md sm:shadow sm:py-20 mx-auto inline-block">
+    <div class="">
+      <i class="material-icons text-5xl text-indigo-900">lock</i>
+      <p class="text-2xl text-indigo-900">Forgot Password ?</p>
+    </div>
+    <form [formGroup]='reset' (ngSubmit)="onSubmit()">
+      <input type="text" class="bg-indigo-100 px-3 py-2 my-4 rounded-md w-64" placeholder="Reset email.." formControlName="email"><br>
+      <button [disabled]="!reset.valid" class="flex justify-center mx-auto bg-indigo-500 px-2 py-2 rounded-full text-white"><p class="px-2">Request</p> <i class="material-icons px-1">send</i></button>
+      
+      <p class="text-xs mt-6 text-gray-700"><a [routerLink]="[ '/sign-in']">Back to Signin</a></p>
+    </form>
+  </div>
+</div>

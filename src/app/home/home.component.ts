@@ -25,4 +25,5 @@ export class HomeComponent implements OnInit {
     localStorage.clear()
     this._router.navigate(['/sign-in'])
   }
+  
 }

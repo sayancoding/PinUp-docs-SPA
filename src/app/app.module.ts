@@ -14,7 +14,9 @@ import { EditorComponent } from './home/editor/editor.component';
 import { DocsListComponent } from './home/docs-list/docs-list.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './service/auth.service';
-import { TokenInterceptorService } from './service/token-interceptor.service'
+import { TokenInterceptorService } from './service/token-interceptor.service';
+import { ResetComponent } from './reset/reset.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { TokenInterceptorService } from './service/token-interceptor.service'
     HomeComponent,
     DocsComponent,
     EditorComponent,
-    DocsListComponent
+    DocsListComponent,
+    ResetComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
