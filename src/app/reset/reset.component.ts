@@ -26,5 +26,6 @@ export class ResetComponent implements OnInit {
     },err=>{
       alert('something have wrong')
     })
+    this.reset.reset()
   }
 }
