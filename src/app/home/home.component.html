@@ -55,10 +55,10 @@
     </div>
     <div class="flex bg-blue-100 sm:flex hidden mt-12 text-black py-2 sm:justify-start justify-center sm:px-4  rounded-full">
       <i class="material-icons sm:block hidden">face</i>
-      <p class="my-auto ml-2 sm:block hidden"><span class="text-sm text-gray-800">Hey,</span>  {{user_name | uppercase}}</p>
+      <p class="my-auto ml-2 text-sm sm:block hidden"><span class="text-sm text-gray-800">Hey,</span>{{user_name| uppercase}}</p>
     </div>
     <div class="mx-auto cursor-pointer" (click)="signOut()">
-      <div class="text-center flex mt-6 ml-6"> <p class="px-2 sm:block hidden">SignOut</p> <i class="material-icons">login</i></div>
+      <div class="text-center flex mt-6 ml-6"> <p class="px-2 sm:block hidden">SignOut</p> <i class="material-icons sm:ml-0 -ml-4">login</i></div>
     </div>
   </div>
   <div class="w-10/12">
